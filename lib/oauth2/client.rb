@@ -38,6 +38,7 @@ module OAuth2
                   :max_redirects    => 5,
                   :raise_errors     => true}.merge(opts)
       @options[:connection_opts][:ssl] = ssl if ssl
+      @options[:connection_opts][:params_encoder] = Faraday::FlatParamsEncoder
     end
 
     # Set the site host
